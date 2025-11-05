@@ -3,43 +3,48 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative">
-      <div className="relative h-[70vh] w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-900 dark:to-black">
+    <section id="home" className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <div className="absolute inset-0">
         <Spline
-          scene="https://prod.spline.design/1o9m3k3b3X2ySz1q/scene.splinecode"
+          scene="https://prod.spline.design/8mF4rj6nzn6iAZ1S/scene.splinecode"
           style={{ width: '100%', height: '100%' }}
         />
+      </div>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent dark:from-black dark:via-black/50" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/70 via-white/40 to-white/90 dark:from-black/70 dark:via-black/40 dark:to-black/90" />
 
-        <div className="absolute inset-0 flex items-center">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
-              className="max-w-3xl"
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl"
+        >
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+            Gereja Harmoni
+            <span className="block bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-600 dark:from-white dark:to-zinc-300">
+              Iman. Harapan. Kasih.
+            </span>
+          </h1>
+          <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300">
+            Rumah bagi pertumbuhan rohani dengan ibadah yang hangat, komunitas yang peduli, dan
+            pelayanan yang berdampak. Temukan renungan harian, jadwal ibadah, dan informasi kegiatan.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#bible"
+              className="inline-flex items-center rounded-md bg-zinc-900 text-white dark:bg-white dark:text-black px-5 py-3 font-medium hover:opacity-90"
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/40 px-3 py-1 text-xs font-medium tracking-widest uppercase text-zinc-700 dark:text-zinc-200 dark:bg-white/10 dark:border-white/10 backdrop-blur">
-                Gereja • Web3 • 2026
-              </span>
-              <h2 className="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight text-zinc-900 dark:text-zinc-100">
-                Ibadah yang Lebih Dekat, Informasi yang Lebih Jelas.
-              </h2>
-              <p className="mt-4 text-lg text-zinc-700 dark:text-zinc-300">
-                Platform informasi gereja modern untuk jemaat dan pengunjung. Terintegrasi jadwal, renungan, persembahan QRIS, dan konten yang dikelola tim admin.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <button className="inline-flex items-center rounded-xl bg-zinc-900 px-5 py-3 text-white dark:bg-white dark:text-black hover:opacity-90 transition font-medium">
-                  Mulai Jelajah
-                </button>
-                <button className="inline-flex items-center rounded-xl border border-white/10 bg-white/10 px-5 py-3 text-zinc-900 dark:text-zinc-100 hover:bg-white/20 transition font-medium">
-                  Lihat Jadwal Ibadah
-                </button>
-              </div>
-            </motion.div>
+              Baca Alkitab
+            </a>
+            <a
+              href="#giving"
+              className="inline-flex items-center rounded-md border border-zinc-300 dark:border-zinc-600 px-5 py-3 font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800"
+            >
+              Persembahan
+            </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
